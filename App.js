@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
 });    fontSize: 80,
-    fontWeight: "200",
+    fontWeight: 200,
     color: "#fff",
   },
   date: {
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
 });    fontSize: 80,
-    fontWeight: "200",
+    fontWeight: 200,
     color: "#fff",
   },
   date: {
