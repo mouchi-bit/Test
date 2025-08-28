@@ -4,7 +4,7 @@ import { Text, View, StyleSheet } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Xin chào từ GitHub + Expo 🚀</Text>
+      <Text style={styles.text}>tui tên Minh =)))</Text>
     </View>
   );
 }
