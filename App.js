@@ -1,40 +1,78 @@
 import React from "react";
-import { View, Text, StyleSheet, StatusBar } from "react-native";
+import { View, Text, StyleSheet, StatusBar, ImageBackground } from "react-native";
 
 export default function App() {
+  // Lấy thời gian hiện tại
   const now = new Date();
   const hours = now.getHours().toString().padStart(2, "0");
   const minutes = now.getMinutes().toString().padStart(2, "0");
 
-  const days = ["Chủ Nhật","Thứ Hai","Thứ Ba","Thứ Tư","Thứ Năm","Thứ Sáu","Thứ Bảy"];
+  // Lấy ngày + thứ
+  const days = [
+    "Chủ Nhật",
+    "Thứ Hai",
+    "Thứ Ba",
+    "Thứ Tư",
+    "Thứ Năm",
+    "Thứ Sáu",
+    "Thứ Bảy"
+  ];
   const dayName = days[now.getDay()];
   const date = `${dayName}, ${now.getDate()}/${now.getMonth() + 1}`;
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#000" />
-      
-      {/* Thời gian */}
+    <ImageBackground
+      source={{ uri: "https://i.imgur.com/2nCt3Sbl.jpg" }} // Wallpaper iPhone
+      style={styles.background}
+    >
+      <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />
+
+      {/* Giờ to giữa màn hình */}
       <Text style={styles.time}>{hours}:{minutes}</Text>
+
       {/* Ngày tháng */}
       <Text style={styles.date}>{date}</Text>
 
-      {/* Home bar iOS */}
-      <View style={styles.spacer} />
+      {/* Spacer để đẩy home bar xuống */}
+      <View style={{ flex: 1 }} />
+
+      {/* Home bar */}
       <View style={styles.homeBar} />
-    </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  background: {
     flex: 1,
-    backgroundColor: "#000", // nền đen giống màn hình chờ
     justifyContent: "center",
     alignItems: "center",
   },
   time: {
     fontSize: 80,
+    fontWeight: "200",
+    color: "#fff",
+    marginTop: 120,
+    textShadowColor: "rgba(0,0,0,0.7)",
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 8,
+  },
+  date: {
+    fontSize: 18,
+    color: "#fff",
+    marginTop: 10,
+    textShadowColor: "rgba(0,0,0,0.6)",
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 6,
+  },
+  homeBar: {
+    width: 120,
+    height: 5,
+    borderRadius: 3,
+    backgroundColor: "rgba(255,255,255,0.7)",
+    marginBottom: 30,
+  },
+});    fontSize: 80,
     fontWeight: "200",
     color: "#fff",
   },
