@@ -22,7 +22,7 @@ export default function App() {
 
   return (
     <ImageBackground
-      source={{ uri: "https://i.imgur.com/2nCt3Sbl.jpg" }} // Wallpaper iPhone
+      source={{ uri: "https://i.imgur.com/2nCt3Sb.jpg" }} // Wallpaper iPhone
       style={styles.background}
     >
       <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />
@@ -35,6 +35,44 @@ export default function App() {
 
       {/* Spacer để đẩy home bar xuống */}
       <View style={{ flex: 1 }} />
+
+      {/* Home bar */}
+      <View style={styles.homeBar} />
+    </ImageBackground>
+  );
+}
+
+const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  time: {
+    fontSize: 80,
+    fontWeight: "200",
+    color: "#fff",
+    marginTop: 120,
+    textShadowColor: "rgba(0,0,0,0.7)",
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 8,
+  },
+  date: {
+    fontSize: 18,
+    color: "#fff",
+    marginTop: 10,
+    textShadowColor: "rgba(0,0,0,0.6)",
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 6,
+  },
+  homeBar: {
+    width: 120,
+    height: 5,
+    borderRadius: 3,
+    backgroundColor: "rgba(255,255,255,0.7)",
+    marginBottom: 30,
+  },
+});      <View style={{ flex: 1 }} />
 
       {/* Home bar */}
       <View style={styles.homeBar} />
