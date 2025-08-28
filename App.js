@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, StatusBar, ImageBackground } from "react-native";
+import { View, Text, StyleSheet, StatusBar } from "react-native";
 
 export default function App() {
   // Lấy thời gian hiện tại
@@ -21,20 +21,52 @@ export default function App() {
   const date = `${dayName}, ${now.getDate()}/${now.getMonth() + 1}`;
 
   return (
-    <ImageBackground
-      source={{ uri: "https://i.imgur.com/2nCt3Sb.jpg" }} // Wallpaper iPhone
-      style={styles.background}
-    >
-      <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />
+    <View style={styles.container}>
+      {/* Thanh status bar (màu sáng) */}
+      <StatusBar barStyle="light-content" backgroundColor="#000" />
 
       {/* Giờ to giữa màn hình */}
       <Text style={styles.time}>{hours}:{minutes}</Text>
 
-      {/* Ngày tháng */}
+      {/* Ngày tháng nhỏ hơn */}
       <Text style={styles.date}>{date}</Text>
 
-      {/* Spacer để đẩy home bar xuống */}
+      {/* Spacer để đẩy home bar xuống cuối */}
       <View style={{ flex: 1 }} />
+
+      {/* Home bar iPhone */}
+      <View style={styles.homeBar} />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#000", // nền đen giống màn hình khóa
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  time: {
+    fontSize: 80,
+    fontWeight: "200",
+    color: "#fff",
+    marginTop: 100,
+  },
+  date: {
+    fontSize: 18,
+    color: "#ccc",
+    marginTop: 10,
+  },
+  homeBar: {
+    width: 120,
+    height: 5,
+    borderRadius: 3,
+    backgroundColor: "#666",
+    marginBottom: 20,
+    alignSelf: "center",
+  },
+});      <View style={{ flex: 1 }} />
 
       {/* Home bar */}
       <View style={styles.homeBar} />
